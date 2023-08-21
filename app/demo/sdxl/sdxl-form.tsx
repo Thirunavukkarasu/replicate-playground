@@ -3,15 +3,18 @@
 import { useState } from "react";
 import Image from "next/image";
 
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+
 const sleep = (ms: any) => new Promise((r) => setTimeout(r, ms));
 
-export default function Form() {
+export default function SdxlForm() {
   const [prediction, setPrediction] = useState<any>(null);
   const [error, setError] = useState(null);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    const response = await fetch("/api/predictions", {
+    const response = await fetch("/api/sdxl", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,7 +35,7 @@ export default function Form() {
       prediction.status !== "failed"
     ) {
       await sleep(1000);
-      const response = await fetch("/api/predictions/" + prediction.id);
+      const response = await fetch("/api/sdxl/" + prediction.id);
       prediction = await response.json();
       if (response.status !== 200) {
         setError(prediction.detail);
@@ -52,15 +55,15 @@ export default function Form() {
 
       <form onSubmit={handleSubmit} className="my-4 flex flex-row">
         <div>
-          <textarea
+          <Textarea
             name="prompt"
             placeholder="Enter a prompt to display an image"
-            className="h-12 w-72 p-2 border-black"
+            className="w-72"
           />
         </div>
-        <button className="mx-4 bg-black text-white px-6 py-2" type="submit">
+        <Button size="lg" className="mx-4" type="submit">
           Go!
-        </button>
+        </Button>
       </form>
 
       {error && <div>{error}</div>}
