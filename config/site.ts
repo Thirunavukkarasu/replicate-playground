@@ -2,25 +2,20 @@ import { SiteConfig } from "@/types";
 
 export const siteConfig: SiteConfig = {
   name: "Replicate Playground",
-  description:
-    "An open source application built using the new router, server components and everything new in Next.js 13.",
-  url: "https://tx.shadcn.com",
-  ogImage: "https://tx.shadcn.com/og.jpg",
+  description: "An open source application built using Replicate models.",
+  url: "https://replicate-playground.vercel.app",
+  ogImage: "https://replicate-playground.vercel.app/og.jpg",
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn/taxonomy",
+    twitter: "https://twitter.com/thirunavukkarasu",
+    github: "https://github.com/thirunavukkarasu/replicate-playground",
   },
 };
 
 export const marketingConfig: any = {
   mainNav: [
     {
-      title: "Models",
-      href: "/models",
-    },
-    {
-      title: "Documentation",
-      href: "/docs",
+      title: "Demos",
+      href: "/demos",
     },
   ],
 };

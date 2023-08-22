@@ -49,16 +49,21 @@ export default function SdxlForm() {
   return (
     <div>
       <p className="text-2xl">
-        Dream something with{" "}
-        <a href="https://replicate.com/stability-ai/stable-diffusion">SDXL</a>:
+        SDXL Demo - Dream something with{" "}
+        <a
+          href="https://replicate.com/stability-ai/stable-diffusion"
+          className="underline"
+        >
+          SDXL
+        </a>
       </p>
 
-      <form onSubmit={handleSubmit} className="my-4 flex flex-row">
+      <form onSubmit={handleSubmit} className="my-4 flex flex-row items-center">
         <div>
           <Textarea
             name="prompt"
             placeholder="Enter a prompt to display an image"
-            className="w-72"
+            className="w-[525px]"
           />
         </div>
         <Button size="lg" className="mx-4" type="submit">

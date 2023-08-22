@@ -127,11 +127,17 @@ export default function LlamaForm() {
   return (
     <div>
       <p className="text-2xl">
-        Do some magic with{" "}
-        <a href="https://replicate.com/stability-ai/stable-diffusion">Llama</a>:
+        Llama Demo - Do some magic with{" "}
+        <a
+          href="https://replicate.com/stability-ai/stable-diffusion"
+          className="underline"
+        >
+          Llama
+        </a>
+        :
       </p>
 
-      <form onSubmit={handleSubmit} className="my-4 flex flex-row">
+      <form onSubmit={handleSubmit} className="my-4 flex flex-row items-center">
         <Textarea
           name="prompt"
           placeholder="Enter a prompt to send to Llama v2."

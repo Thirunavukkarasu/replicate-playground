@@ -9,10 +9,11 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { modelsConfig } from "@/config/site";
+import Link from "next/link";
 
 export default function page() {
   return (
-    <div className="flex flex-row gap-4">
+    <div className="container flex pt-12 flex-row items-center gap-4 text-center">
       {modelsConfig.map((model: any, idx: any) => (
         <Card key={idx}>
           <CardHeader>
@@ -23,8 +24,10 @@ export default function page() {
             <p>{model.content}</p>
           </CardContent>
           <CardFooter>
-            <Button className="w-full">
-              <ArrowRightCircleIcon className="mr-2 h-4 w-4" /> Explore
+            <Button className="w-full" asChild>
+              <Link href={`/demos/${model.formattedName}`}>
+                <ArrowRightCircleIcon className="mr-2 h-4 w-4" /> Explore
+              </Link>
             </Button>
           </CardFooter>
         </Card>
