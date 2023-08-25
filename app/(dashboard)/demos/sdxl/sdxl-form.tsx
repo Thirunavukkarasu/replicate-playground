@@ -77,7 +77,8 @@ export default function SdxlForm() {
           <>
             {prediction.output && (
               <div>
-                <Image
+                {/* eslint-disable-next-line @next/next/no-img-element*/}
+                <img
                   src={prediction.output[prediction.output.length - 1]}
                   alt="output"
                   width={525}
