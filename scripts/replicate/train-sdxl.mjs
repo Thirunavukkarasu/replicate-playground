@@ -6,7 +6,7 @@ const replicate = new Replicate({
   auth: process.env.REPLICATE_API_TOKEN || "",
 });
 
-async function main() {
+export async function runTraining() {
   const training = await replicate.trainings.create(
     "stability-ai",
     "sdxl",
@@ -23,8 +23,3 @@ async function main() {
   );
   console.log(`URL: https://replicate.com/p/${training.id}`);
 }
-
-main();
-
-// Run:
-// node train-sdxl.js
